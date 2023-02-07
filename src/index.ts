@@ -36,7 +36,7 @@ sequelize.sync().then(() => {
   console.log("Tables created successfully");
 });
 
-app.get("/", async (req, res) => {
+app.get("/createdummy", async (req, res) => {
   // Create dummy data for actors
   await addModel()
   res.send("Dummy data has been inserted!");
