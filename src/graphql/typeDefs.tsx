@@ -1,6 +1,5 @@
-import { gql } from "apollo-server";
 
-const typeDefs = gql`
+export const typeDefs = `
   type Actor {
     id: ID!
     name: String!
@@ -54,6 +53,5 @@ const typeDefs = gql`
     actors: [Actor!]!
     authors: [Author!]!
   }
-`;
+`
 
-export default typeDefs;

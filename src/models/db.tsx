@@ -1,10 +1,11 @@
 import { Sequelize } from "sequelize";
 import dotenv from "dotenv";
-
 dotenv.config();
 
+const url = process.env.DATABASE!;
+
 export const sequelize = new Sequelize(
-  "postgres://pguhcrwrwmrrrb:5adce79c164b4d87a3e63dc89709e504efb6a1fccc5d5d369b528a1217f11b41@ec2-52-21-136-176.compute-1.amazonaws.com:5432/d9374l2j1jod17",
+  url,
   {
     dialectOptions: {
       ssl: {
@@ -14,6 +15,7 @@ export const sequelize = new Sequelize(
     },
   }
 );
+// export const sequelize = new Sequelize('sqlite::memory:') // Example for sqlite
 
 sequelize
   .authenticate()
